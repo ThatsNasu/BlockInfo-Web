@@ -1,5 +1,4 @@
 <?php
-	var_dump($_GET);
 	// requirements
 	require_once('./backend/Helper.php');
 	require_once('./backend/dbaccess.php');
