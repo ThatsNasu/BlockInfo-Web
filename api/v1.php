@@ -9,10 +9,10 @@
 	// append requested fields to fields array, no need to check for doublings, since the database would only return
 	// the requested fields once.
 	if(isset($_GET['fields']) && !empty($_GET['fields'])) {
-		foreach(explode(",", $_GET['fields']) as $field) $fields[] += $field;
+		foreach(explode(",", $_GET['fields']) as $field) $fields[] = $field;
 	}
 	if(isset($_POST['fields']) && !empty($_POST['fields'])) {
-		foreach(explode(",", $_POST['fields']) as $field) $fields[] += $field;
+		foreach(explode(",", $_POST['fields']) as $field) $fields[] = $field;
 	}
 	var_dump($fields);
 	die();
