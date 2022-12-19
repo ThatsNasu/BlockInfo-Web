@@ -14,18 +14,12 @@
 	if(!isset($url[3])) $url[3] = "*";
 	
 	$result = $databaseManager->get($url[2], $url[3], $fields);
-	var_dump($result);
-	echo '<br /><br />';
-
-	foreach($result as $block) {
-		if(array_key_exists('id', $block)) $block['id'] = intval($block['id']);
-		if(array_key_exists('stacksize', $block)) $block['stacksize'] = intval($block['stacksize']);
-		if(array_key_exists('mineable_tier', $block)) $block['mineable_tier'] = intval($block['mineable_tier']);
-		if(array_key_exists('placeable', $block)) $block['placeable'] = boolval($block['placeable']);
-		if(array_key_exists('mineable', $block)) $block['mineable'] = boolval($block['mineable']);
-		if(array_key_exists('interactable', $block)) $block['interactable'] = boolval($block['interactable']);
-	}
-	var_dump($result);
+	if(array_key_exists('id', $block)) $block['id'] = intval($block['id']);
+	if(array_key_exists('stacksize', $block)) $block['stacksize'] = intval($block['stacksize']);
+	if(array_key_exists('mineable_tier', $block)) $block['mineable_tier'] = intval($block['mineable_tier']);
+	if(array_key_exists('placeable', $block)) $block['placeable'] = boolval($block['placeable']);
+	if(array_key_exists('mineable', $block)) $block['mineable'] = boolval($block['mineable']);
+	if(array_key_exists('interactable', $block)) $block['interactable'] = boolval($block['interactable']);
 
 	// ?format=xml
 	if((isset($_GET['format']) && !empty($_GET['format']) && $_GET['format'] == 'xml') || (isset($_POST['format']) && !empty($_POST['format']) && $_POST['format'] == 'xml')) {
