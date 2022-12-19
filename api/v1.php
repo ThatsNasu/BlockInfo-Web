@@ -11,11 +11,10 @@
 	if(isset($_GET['fields']) && !empty($_GET['fields'])) array_push($fields, explode(",", $_GET['fields']));
 	if(isset($_POST['fields']) && !empty($_POST['fields'])) array_push($fields, explode(",", $_POST['fields']));
 
-	if(!isset($url[3])) $url[3] = "*";
+	if(!isset($url[2])) die('missing parameter (table selector)');
+	if(!isset($url[3])) die('missing parameter (block selector)');
 	
 	$result = $databaseManager->get($url[2], $url[3], $fields);
-
-	var_dump($result);
 	if(array_key_exists('id', $result)) $result['id'] = intval($result['id']);
 	if(array_key_exists('stacksize', $result)) $result['stacksize'] = intval($result['stacksize']);
 	if(array_key_exists('mineable_tier', $result)) $result['mineable_tier'] = intval($result['mineable_tier']);
