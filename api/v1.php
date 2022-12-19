@@ -14,6 +14,9 @@
 	if(!isset($url[2])) die('missing parameter (table selector)');
 	if(!isset($url[3])) die('missing parameter (block selector)');
 	
+	var_dump($fields);
+	die();
+
 	$result = $databaseManager->get($url[2], $url[3], $fields);
 	if(array_key_exists('id', $result)) $result['id'] = intval($result['id']);
 	if(array_key_exists('stacksize', $result)) $result['stacksize'] = intval($result['stacksize']);
