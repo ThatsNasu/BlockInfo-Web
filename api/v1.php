@@ -23,7 +23,7 @@
 	if(array_key_exists('interactable', $result)) $result['interactable'] = boolval($result['interactable']);
 
 	// ?format=xml
-	if((isset($_GET['format']) && !empty($_GET['format']) && $_GET['format'] == 'xml') || (isset($_POST['format']) && !empty($_POST['format']) && $_POST['format'] == 'xml')) {
+	if(isset($requestedOutputFormat) && $requestedOutputFormat == 'xml') {
 		$xml = '<?xml version="1.0" encoding="utf-8"?>';
 		$xml .= '<'.$url[2].'><'.$url[3].'>';
 		foreach(array_keys($result) as $key) {
