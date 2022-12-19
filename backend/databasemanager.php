@@ -22,7 +22,7 @@
 			$this->connect();
 			$stmtbuilder = "SELECT ";
 			if($fields != NULL && sizeof($fields) != 0) {
-				foreach($fields[0] as $field) {
+				foreach($fields as $field) {
 					$stmtbuilder .= $field.',';
 				}
 				$stmtbuilder = rtrim($stmtbuilder, ",");
