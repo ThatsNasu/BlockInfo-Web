@@ -29,7 +29,8 @@
 			} else {
 				$stmtbuilder .= "*";
 			}
-			$stmtbuilder .= " FROM ".$table." WHERE name = ?";
+			$stmtbuilder .= " FROM ".$table;
+			$stmtbuilder .= ($name == "*") ? "" : " WHERE name = ?";
 			$stmt = $this->pdo->prepare($stmtbuilder);
 			$stmt->execute(array($name));
 			return $stmt->fetchAll(PDO::FETCH_ASSOC);
