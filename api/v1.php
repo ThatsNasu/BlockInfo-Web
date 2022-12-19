@@ -4,7 +4,7 @@
 	$requestedOutputFormat;
 
 	if($isset($_GET['format']) && !empty($_GET['format'])) $requestedOutputFormat = $_GET['format'];
-	if(isset($_POST['format']) && !empty($_POST['format']) && empty($requestedOutputFormat)) = $requestedOutputFormat = $_POST['format'];
+	if(isset($_POST['format']) && !empty($_POST['format']) && empty($requestedOutputFormat)) $requestedOutputFormat = $_POST['format'];
 
 	// append requested fields to fields array, no need to check for doublings, since the database would only return
 	// the requested fields once.
