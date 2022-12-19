@@ -14,7 +14,7 @@
 	if(!isset($url[3])) $url[3] = "*";
 	
 	$result = $databaseManager->get($url[2], $url[3], $fields);
-	var_dump($result)
+	var_dump($result);
 	echo '<br /><br />';
 
 	foreach($result as $block) {
