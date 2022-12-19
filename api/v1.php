@@ -14,8 +14,6 @@
 	if(isset($_POST['fields']) && !empty($_POST['fields'])) {
 		foreach(explode(",", $_POST['fields']) as $field) $fields[] = $field;
 	}
-	var_dump($fields);
-	die();
 
 	if(!isset($url[2])) die('missing parameter (table selector)');
 	if(!isset($url[3])) die('missing parameter (block selector)');
