@@ -21,7 +21,7 @@
 		public function get($table, $name, $fields) {
 			$this->connect();
 			$stmtbuilder = "SELECT ";
-			if($fields != NULL && sizeof($fields[0]) != 0) {
+			if($fields != NULL && sizeof($fields) != 0) {
 				foreach($fields[0] as $field) {
 					$stmtbuilder .= $field.',';
 				}
