@@ -18,12 +18,12 @@
 			$this->pdo = new PDO('mysql:host='.$this->SERVER.';dbname='.$this->DATABASE, $this->USER, $this->PASS);
 		}
 
-		public function get($table, $name, ...$fields) {
+		public function get($table, $name, $fields) {
 			var_dump($fields);
 			die();
 			$this->connect();
 			$stmtbuilder = "SELECT ";
-			if($fields[0] != NULL && sizeof($fields[0]) != 0) {
+			if($fields != NULL && sizeof($fields[0]) != 0) {
 				foreach($fields[0] as $field) {
 					$stmtbuilder .= $field.',';
 				}
