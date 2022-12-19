@@ -14,6 +14,8 @@
 	if(!isset($url[3])) $url[3] = "*";
 	
 	$result = $databaseManager->get($url[2], $url[3], $fields);
+
+	var_dump($result);
 	if(array_key_exists('id', $result)) $result['id'] = intval($result['id']);
 	if(array_key_exists('stacksize', $result)) $result['stacksize'] = intval($result['stacksize']);
 	if(array_key_exists('mineable_tier', $result)) $result['mineable_tier'] = intval($result['mineable_tier']);
