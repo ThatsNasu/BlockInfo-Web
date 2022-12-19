@@ -19,8 +19,6 @@
 		}
 
 		public function get($table, $name, $fields) {
-			var_dump($fields);
-			die();
 			$this->connect();
 			$stmtbuilder = "SELECT ";
 			if($fields != NULL && sizeof($fields[0]) != 0) {
