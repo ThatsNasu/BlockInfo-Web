@@ -32,7 +32,7 @@
 			$stmtbuilder .= " FROM ".$table." WHERE name = ?";
 			$stmt = $this->pdo->prepare($stmtbuilder);
 			$stmt->execute(array($name));
-			return $stmt->fetch(PDO::FETCH_ASSOC);
+			return $stmt->fetchAll(PDO::FETCH_ASSOC);
 		}
 
 		public function update($table, $name, $field, $value) {
