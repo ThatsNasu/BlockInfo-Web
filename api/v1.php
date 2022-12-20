@@ -25,6 +25,7 @@
 	if(array_key_exists('placeable', $result)) $result['placeable'] = boolval($result['placeable']);
 	if(array_key_exists('mineable', $result)) $result['mineable'] = boolval($result['mineable']);
 	if(array_key_exists('interactable', $result)) $result['interactable'] = boolval($result['interactable']);
+	if(array_key_exists('last_revisited', $result)) $result['last_revisited'] = strtotime($result['last_revisited']);
 
 	// ?format=xml
 	if(isset($requestedOutputFormat) && $requestedOutputFormat == 'xml') {
